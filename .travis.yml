@@ -7,4 +7,4 @@ install:
 
 # command to run tests
 script:
-  - pytest tests/full_tsst.py
+  - pytest tests/full_test.py
