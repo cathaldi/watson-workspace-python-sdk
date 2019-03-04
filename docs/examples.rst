@@ -18,11 +18,13 @@ Sending Messages
 Reacting to Messages
 --------------------
 Adding a reaction
+
 .. code-block:: python
 
    my_first_message.add_reaction("👍")
 
 Removing a reaction
+
 .. code-block:: python
 
    my_first_message.remove_reaction("👍")
@@ -49,6 +51,7 @@ Get a space
 .. code-block:: python
 
     my_space = ww.Space.get(space_id)
+
 
 Add members
 .. code-block:: python
