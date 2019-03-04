@@ -52,7 +52,8 @@ class Client:
         self.access_token = response.json().get("access_token")
         self.id = response.json().get("id")
         Config.access_token = self.access_token
-        threading.Timer(3000, self._authenticate).start()  # reauth after 50 mins
+        self._auth_thread = threading.Timer(3000, self._authenticate)
+        self._auth_thread.start()  # reauth after 50 mins
         return response
 
     def __repr__(self) -> str:
@@ -118,3 +119,6 @@ class Client:
             new_space = Space.get_from_json(space_json_string)
             retrieved_spaces[new_space.id] = new_space
         return retrieved_spaces
+
+    def stop(self):
+        self._auth_thread.cancel()
