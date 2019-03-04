@@ -252,7 +252,6 @@ class Message:
                                  headers={"Authorization": "Bearer " + Config.access_token,
                                           "Content-type": "application/graphql",
                                           'x-graphql-view': 'PUBLIC'})
-
         if response.json().get("data").get("addReaction").get("reaction").get("viewerHasReacted"):
             return None
         _http_status_handler(response.json(), response.status_code)
@@ -361,3 +360,46 @@ class Message:
                                           "Content-type": "application/graphql",
                                           'x-graphql-view': 'PUBLIC, BETA'})
         _http_status_handler(response.json(), response.status_code)
+
+    def count_reaction(self, reaction: str) -> int:  # todo: build this out - Should check who reacted as well
+        """
+
+        :param reaction: Unicode reaction to verify e.g. 🌧️
+        :return: Number of times reaction has been added to message
+        :rtype: int
+        """
+        body = f"""
+                    query 
+                    {{
+                         reactingUsers(targetId: "{self.id}", reaction: "{reaction}")
+                         {{ 
+                                totalCount 
+                                items 
+                                    {{
+                                        user 
+                                            {{ 
+                                                email 
+                                                displayName 
+                                                id 
+                                            }}
+                                        reacted 
+                                    }}
+                            pageInfo 
+                            {{ 
+                                hasNextPage 
+                                hasPreviousPage 
+                                endCursor 
+                                startCursor 
+                            }}
+                        }}
+                    }}
+                    """
+        response = requests.post(f"https://api.watsonwork.ibm.com/graphql",
+                                 headers={"Authorization": "Bearer " + Config.access_token,
+                                          "Content-type": "application/graphql",
+                                          "x-graphql-view": "PUBLIC"}, data=body.encode("utf-8"))
+
+        return response.json().get("data").get("reactingUsers").get("totalCount")
+        # response.json().get("data").get("reactingUsers").get("items", [{}])[0].get("")
+        # print(response.content)
+

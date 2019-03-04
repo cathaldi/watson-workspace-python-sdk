@@ -147,7 +147,6 @@ class Space:
                                  headers={"Authorization": "Bearer " + Config.access_token,
                                           "Content-type": "application/json"})
         _http_status_handler(response.json(), response.status_code)
-        print(response.json())
         return cls.get_from_json(response.json().get("data").get("space"))
 
     def _update(self, title)-> None:  # todo: Not implemented fully

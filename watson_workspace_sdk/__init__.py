@@ -5,3 +5,4 @@ from .models.person import Person
 from .client import Client
 from .models.annotation import Annotation
 from .models.card import Card
+from .models.webhook import Webhook
