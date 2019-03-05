@@ -11,7 +11,7 @@ an annotation displaying travel options.
 Example
 --------
 
-Sending the message `We need to get this client on the call, it is very important we don't lose them after the San Francisco fiasco`
+Sending the message **`We need to get this client on the call, it is very important we don't lose them after the San Francisco fiasco`**
 To stress, this is a sample sentence.
 
 message-nlp-entities
