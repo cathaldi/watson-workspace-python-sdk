@@ -1,4 +1,4 @@
-Making A Bot
+Making an App/Bot
 ============
 
 An endpoint with a hostname ( ip won't suffice ) and a valid HTTPS cert
