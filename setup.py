@@ -1,13 +1,13 @@
 from setuptools import setup
 
 install_requires = [
-    'requests']
+    'requests', 'flask']
 
 setup(
     name='watson_workspace_sdk',
-    version='0.6',
-    packages=['tests', 'watson_workspace_sdk', 'watson_workspace_sdk.models'],
-    url='',
+    version='0.7',
+    packages=['watson_workspace_sdk', 'watson_workspace_sdk.models'],
+    url='https://github.com/cathaldi/watson-workspace-python-sdk',
     license='Apache2',
     author='Cathal A. Dinneen',
     author_email='cathal.a.dinneen@gmail.com',
