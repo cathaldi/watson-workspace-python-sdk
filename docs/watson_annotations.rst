@@ -1,5 +1,5 @@
-Annotations
-===========
+Watson Annotations
+==================
 
 For each chat message sent in Watson Workspace many Annotations are generated utilising the Watson APIs to extract
 information from the chat message. Whether is it used or not these will be sent with each message, so if there is a

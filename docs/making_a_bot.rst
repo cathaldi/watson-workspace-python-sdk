@@ -1,17 +1,18 @@
 Making an App/Bot
 ============
 
-An endpoint with a hostname ( ip won't suffice ) and a valid HTTPS cert
+A bot will need to be hosted on a server that
+ - has a domain name
+ - supports HTTPS
+
 
 Log into https://developer.watsonwork.ibm.com/apps and Create New App
 
-If you just want to use the bot as a client to send messages periodically you should be set as this can be achieved
+An application Id and Secret will be generated.
+Take note of the secret as it is only generated once but you can regenerate a new one whenever you want.
+
+If you just want to use the app for one way communication to workspace, for instance sending messages you should be set as this can be achieved
 through authorising with the APP_ID and APP_SECRET.
 
-
 To react to events like new messages in a space, users being removed, reactions added etc. we'll need to set up
-a bot that makes use of Webhooks.
-
-
-We'll be given a webhook secret in order to authenticate events coming from Watson Workspace.
-
+a bot that makes use of `Webhooks <https://watson-workspace-python-sdk.readthedocs.io/en/latest/webhooks.html>`_

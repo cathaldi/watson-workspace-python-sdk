@@ -16,6 +16,7 @@ Authenticate with Watson Workspace
 Sending Messages
 ----------------
 .. code-block:: python
+
    from watson_workspace_sdk import Message
 
    my_first_message = ww.Message.create(WORKSPACE_ID, "Hello World", "Some text here", 'green')

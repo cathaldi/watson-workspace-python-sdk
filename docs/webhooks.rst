@@ -1,9 +1,22 @@
 Webhooks
 ========
 
-Playing with Spaces
+Adding webhooks to your application
+-----------------------------------
+After creating your application navigate to **Listen to events** and click **Add an outbound webhook**
+In the image below we have added an endpoint and we are watching for the event **message-annotation-added** which will
+be triggered when any annotation is added for any message. So if we were to add a focus annotation or click an annotation.
+It also triggers when Watson Workspace adds `Watson API annotations  <https://watson-workspace-python-sdk.readthedocs.io/en/latest/webhooks.html>`_
+
+![alt text](images/ww_add_listener.png "Image showing the result of clicking a Watson Workspace event")
+
+
+
+
+Example
 -------------------
 Get a space
+
 .. code-block:: python
 
     @app.route('/messages', methods=["POST"])
