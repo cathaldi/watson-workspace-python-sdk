@@ -41,9 +41,9 @@ Create message with attachment
 .. code-block:: python
 
     from watson_workspace_sdk import card
-        new_card = Card("Here's test card 1 ", "A smaller title", "Body")
-        new_card.add_button("Test Button", "test_button_event")
-        attached_message = Message.message_with_attachment(conversation_id=webhook_event.space_id, target_dialog_id=annotation.get("targetDialogId"), target_user_id=annotation.get("targetDialogId"), cards=[new_card])
+    new_card = Card("Here's test card 1 ", "A smaller title", "Body")
+    new_card.add_button("Test Button", "test_button_event")
+    attached_message = Message.message_with_attachment(conversation_id=webhook_event.space_id, target_dialog_id=annotation.get("targetDialogId"), target_user_id=annotation.get("targetDialogId"), cards=[new_card])
 
 Create message with annotation
 .. code-block:: python
@@ -70,10 +70,6 @@ Remove members
 
     my_space.remove_members()
 
-Add File
-.. code-block:: python
-
-    # Work in progress
 
 Webhooks
 --------

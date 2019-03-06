@@ -8,21 +8,21 @@ webhook listening in for annotation-added these will have to be ignored,handled 
 There may be some information that is useful for example message-nlp-entities picked out a location which could display
 an annotation displaying travel options.
 
-Example
---------
+Sample Sentence
+---------------
 
-Sending the message **`We need to get this client on the call, it is very important we don't lose them after the San Francisco fiasco`**
+**We need to get this client on the call, it is very important we don't lose them after the San Francisco fiasco**
+
 To stress, this is a sample sentence.
 
-message-nlp-entities
-
+**message-nlp-entities**
 .. code-block:: javascript
 
     {"language":"en","entities":[{"count":1,"relevance":0.33,"text":"San Francisco","type":"Location"}]}
 
 Language was picked up, along with the entity San Francisco which is of type Location
 
-message-nlp-keywords
+**message-nlp-keywords**
 
 .. code-block:: javascript
 
@@ -30,19 +30,19 @@ message-nlp-keywords
 
 Keywords noted were "San Francisco fiasco" and "client"
 
-message-nlp-docSentiment
+**message-nlp-docSentiment**
 
 .. code-block:: javascript
 
     {"language":"en","docSentiment":{"score":0.488068,"type":"neutral"}}
 
-message-nlp-concepts
+**message-nlp-concepts**
 
 .. code-block:: javascript
 
     {"language":"en","concepts":[{"dbpedia":"http://dbpedia.org/resource/2000s_music_groups","relevance":0.840367,"text":"2000s music groups"},{"dbpedia":"http://dbpedia.org/resource/São_Francisco_(disambiguation)","relevance":0.757086,"text":"São Francisco"}]}
 
-message-nlp-taxonomy
+**message-nlp-taxonomy**
 
 .. code-block:: javascript
 

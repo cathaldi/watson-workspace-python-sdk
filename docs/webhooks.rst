@@ -8,7 +8,7 @@ In the image below we have added an endpoint and we are watching for the event *
 be triggered when any annotation is added for any message. So if we were to add a focus annotation or click an annotation.
 It also triggers when Watson Workspace adds `Watson API annotations  <https://watson-workspace-python-sdk.readthedocs.io/en/latest/watson_annotations.html#>`_
 
-![alt text](images/ww_add_listener.png "Image showing the result of clicking a Watson Workspace event")
+![alt text](docs/images/ww_add_listener.png "Image showing the result of clicking a Watson Workspace event")
 
 
 
