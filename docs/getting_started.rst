@@ -25,3 +25,6 @@ Client object can get a dict[space_id, Space] of spaces. Which returns a the spa
 
 
     retrieved_space_ids
+
+
+Decorators

@@ -12,16 +12,28 @@ It also triggers when Watson Workspace adds `Watson API annotations  <https://wa
 
 
 
+----------
+Decorators
+----------
+
+There are a number of decorators to help handle events from Watson Workspace.
+
+**@verify_workspace**
+    Verify incoming requests originate from Watson Workspace. Requests are verified with through a provided webhook secret taken as a parameter.
+
+**@handle_verification**
+Handles verification messages from Watson Workspace when enabling a webhook and also every 5 minutes responding to Watson Workspace's periodic verification.
 
 Example
 -------------------
-Get a space
+
+When triggered
 
 .. code-block:: python
 
     @app.route('/messages', methods=["POST"])
-    @verify_workspace_origin(os.environ.get("app_secret"))
-    @handle_verification(os.environ.get("app_secret"))
+    @verify_workspace_origin(os.environ.get("webhook_secret"))
+    @handle_verification(os.environ.get("webhook_secret"))
     def message_webhook(*args, **kwargs):
         webhook_event = Webhook.from_json(request.json)
 
