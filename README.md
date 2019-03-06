@@ -14,3 +14,5 @@ A sample application can be [found here](https://github.com/cathaldi/Watson-Work
 
 
 Documentation can be found here on [read the docs](https://watson-workspace-python-sdk.readthedocs.io/en/latest/getting_started.html)
+
+
