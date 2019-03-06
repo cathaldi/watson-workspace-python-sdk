@@ -1,7 +1,5 @@
 
 
-
-
 def _http_status_handler(json_body, response_status_code) -> str:
     """
 
@@ -24,16 +22,6 @@ def _http_status_handler(json_body, response_status_code) -> str:
         return ""
     elif given_status_code >= 400:
         _throw_http_400(json_body.get("errors", f"Received a {response_status_code} from Watson Workspace"))
-    # elif given_status_code == 401:
-    #     _throw_http_400(json_body.get("errors", f"Received a {response_status_code} from Watson Workspace"))
-    # elif given_status_code == 403:
-    #     _throw_http_400(json_body.get("errors", f"Received a {response_status_code} from Watson Workspace"))
-    # elif given_status_code == 404:
-    #     _throw_http_404(json_body.get("errors", f"Received a {response_status_code} from Watson Workspace"))
-    # elif given_status_code == 500:
-    #     _throw_http_500(json_body.get("errors", f"Received a {response_status_code} from Watson Workspace"))
-    # elif given_status_code == 502:
-    #     _throw_http_500(json_body.get("errors", f"Received a {response_status_code} from Watson Workspace"))
     else:
         raise Exception(f"Unexpected exception. Received a {given_status_code}")
 
