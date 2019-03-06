@@ -10,4 +10,7 @@ A work in progress but implemented features are shown in the documentation below
 A sample application can be [found here](https://github.com/cathaldi/Watson-Workspace-Sample-App
 )
 
+![alt text](docs/images/rps_focus_annotation.gif "Gif showing focus annotation  and action fulfillment on a sample app")
+
+
 Documentation can be found here on [read the docs](https://watson-workspace-python-sdk.readthedocs.io/en/latest/getting_started.html)
