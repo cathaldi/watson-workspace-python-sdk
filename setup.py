@@ -6,7 +6,7 @@ install_requires = [
 setup(
     name='watson_workspace_sdk',
     version='0.7',
-    packages=['watson_workspace_sdk'],
+    packages=['watson_workspace_sdk', 'watson_workspace_sdk.models'],
     url='https://github.com/cathaldi/watson-workspace-python-sdk',
     license='Apache2',
     author='Cathal A. Dinneen',
