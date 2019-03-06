@@ -120,5 +120,25 @@ class Client:
             retrieved_spaces[new_space.id] = new_space
         return retrieved_spaces
 
+    def get_space_ids(self, max_number_of_spaces: Optional[int] = 10) -> List[Space]:
+        """
+        Gets a list of spaces the user is a member of
+        :param: max_number_of_spaces : Max number of spaces to be returned, default is 10.
+        :return: List of spaces
+        :rtype: List['Spaces']
+        """
+        retrieved_space_ids = []
+        body = "query getSpaces {spaces(first: {0}) {" \
+               " items { id title description created updated membersUpdated members { items { email displayName }}}}}"
+        response = requests.post("https://api.watsonwork.ibm.com/graphql?query={1}".format(body,max_number_of_spaces),
+                                 headers={"Authorization": "Bearer " + self.access_token,
+                                          "Content-type": "application/json"})
+        for space_json_string in response.json().get("data").get("spaces").get("items"):
+            new_space = Space.get_from_json(space_json_string)
+            retrieved_space_ids.append(new_space.id)
+
+        return retrieved_space_ids
+
     def stop(self):
         self._auth_thread.cancel()
+
