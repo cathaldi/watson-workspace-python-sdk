@@ -72,7 +72,7 @@ class Client:
         :return: None
         """
         # todo: validate in case of bad creds.
-        body = {"grant_type": f"refresh_token", "refresh_token": f"{self.access_token}"}  # , "refresh_token": f"{self.access_token}"}
+        body = {"grant_type": f"refresh_token", "refresh_token": f"{self.access_token}"}
         headers = {"Authorization": "Bearer " + Config.access_token}
         response = requests.post("https://api.watsonwork.ibm.com/oauth/token", data=body,
                                  headers=headers)

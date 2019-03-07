@@ -65,6 +65,10 @@ class TestWorkspace(unittest.TestCase):
     def test_09_add_focus_and_get_message(self):
         self.test_message.add_focus("rain", start=0, end=4, actions='"test_intent"')
         verification_message = Message.get(self.test_message.id)
-        assert("\"phrase\":\"rain\"," in verification_message.annotations[1])  # todo: annotations should parse each annotation.
+        for annotation in verification_message.annotations:
+            if "\"phrase\":\"rain\"," in annotation:
+                assert (True)
+                return
+        assert(False)
 
     ww.stop()

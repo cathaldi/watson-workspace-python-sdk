@@ -11,6 +11,8 @@ It also triggers when Watson Workspace adds `Watson API annotations  <https://wa
 ![alt text](docs/images/ww_add_listener.png "Image showing the result of clicking a Watson Workspace event")
 
 
+![alt text](docs/images/ww_add_action.png "Image showing the result of clicking a Watson Workspace event")
+
 
 ----------
 Decorators
@@ -22,7 +24,7 @@ There are a number of decorators to help handle events from Watson Workspace.
     Verify incoming requests originate from Watson Workspace. Requests are verified with through a provided webhook secret taken as a parameter.
 
 **@handle_verification**
-Handles verification messages from Watson Workspace when enabling a webhook and also every 5 minutes responding to Watson Workspace's periodic verification.
+    Handles verification messages from Watson Workspace when enabling a webhook and also every 5 minutes responding to Watson Workspace's periodic verification.
 
 Example
 -------------------
